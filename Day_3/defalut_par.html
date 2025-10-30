@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Example of Default Parameters
+        function greet(name, greeting = "Hello") {
+            return `${greeting}, ${name}!`;
+        }
+        console.log(greet("Alice")); // Output: Hello, Alice!
+        console.log(greet("Bob", "Hi")); // Output: Hi, Bob!
+    </script>
+    <!-- reusing mathUtils.js  which is defined as a seprate file -->
+
+    <script type="module">
+        import { square, cube, factorial, power } from './math_Utils.js';
+        
+    // we want to display above results in the HTML body
+    
+        document.body.innerHTML += `<p>${greet("Alice")}</p>`;
+        // here we are calling greet function with both parameters and using += to append to existing content
+        document.body.innerHTML += `<p>${greet("Bob", "Hi")}</p>`;
+        document.body.innerHTML += `<p>${square(5)}</p>`;
+        document.body.innerHTML += `<p>${cube(5)}</p>`;
+        document.body.innerHTML += `<p>${factorial(5)}</p>`;
+        document.body.innerHTML += `<p>${power(2, 3)}</p>`;
+    </script>
+</body>
+</html>
